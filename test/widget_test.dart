@@ -12,6 +12,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:alquran/main.dart';
 import 'dart:convert';
+import 'package:audioplayers/audioplayers.dart';
 
 void main() async {
   Uri url = Uri.parse("https://quran-api-id.vercel.app/surahs");

@@ -44,7 +44,7 @@ class _HomeTabBarState extends State<HomeTabBar>
                 controller: _tabController,
                 tabs: [
                   Tab(text: "Surah"),
-                  Tab(text: "Para"),
+                  Tab(text: "Juz"),
                   Tab(text: "Page"),
                   Tab(text: "Hijab")
                 ]),

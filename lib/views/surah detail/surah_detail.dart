@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:alquran/core.dart';
 import 'dart:convert';
+import 'package:audioplayers/audioplayers.dart';
 
 class SurahDetail extends StatefulWidget {
   const SurahDetail({super.key});
@@ -23,6 +24,7 @@ class _SurahDetailState extends State<SurahDetail> {
   }
 
   final Surah surah = Get.arguments;
+  bool isPlaying = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,7 +116,15 @@ class _SurahDetailState extends State<SurahDetail> {
                                             icon: Icon(Icons.share_outlined)),
                                         IconButton(
                                             color: ayahPurple,
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              final player = AudioPlayer();
+                                              if (isPlaying) {
+                                                await player.stop();
+                                              } else {
+                                                await player.setSourceUrl(
+                                                    '${ayahs?.audio?.minshawi}');
+                                              }
+                                            },
                                             icon: Icon(
                                                 Icons.play_arrow_outlined)),
                                         IconButton(
